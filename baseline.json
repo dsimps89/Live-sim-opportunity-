@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "type": "synthetic_reference_baseline",
+  "population": 25000,
+  "participation": 0.12,
+  "paidConversion": 0.015,
+  "businessRecords": 1189,
+  "taskConcepts": 140,
+  "inferredLinks": 6053,
+  "currency": "CAD",
+  "tiers": [
+    {
+      "priceCad": 20,
+      "inferredLinks": 1908,
+      "baselineExpectedPaidTasksPerDay": 8.86
+    },
+    {
+      "priceCad": 40,
+      "inferredLinks": 844,
+      "baselineExpectedPaidTasksPerDay": 7.66
+    },
+    {
+      "priceCad": 75,
+      "inferredLinks": 434,
+      "baselineExpectedPaidTasksPerDay": 6.38
+    },
+    {
+      "priceCad": 100,
+      "inferredLinks": 222,
+      "baselineExpectedPaidTasksPerDay": 5.76
+    },
+    {
+      "priceCad": 150,
+      "inferredLinks": 764,
+      "baselineExpectedPaidTasksPerDay": 4.89
+    },
+    {
+      "priceCad": 250,
+      "inferredLinks": 241,
+      "baselineExpectedPaidTasksPerDay": 3.85
+    },
+    {
+      "priceCad": 500,
+      "inferredLinks": 220,
+      "baselineExpectedPaidTasksPerDay": 2.65
+    },
+    {
+      "priceCad": 1000,
+      "inferredLinks": 527,
+      "baselineExpectedPaidTasksPerDay": 1.739
+    },
+    {
+      "priceCad": 2000,
+      "inferredLinks": 203,
+      "baselineExpectedPaidTasksPerDay": 1.101
+    },
+    {
+      "priceCad": 3000,
+      "inferredLinks": 51,
+      "baselineExpectedPaidTasksPerDay": 0.8333
+    },
+    {
+      "priceCad": 5000,
+      "inferredLinks": 171,
+      "baselineExpectedPaidTasksPerDay": 0.5814
+    },
+    {
+      "priceCad": 10000,
+      "inferredLinks": 69,
+      "baselineExpectedPaidTasksPerDay": 0.353
+    },
+    {
+      "priceCad": 20000,
+      "inferredLinks": 246,
+      "baselineExpectedPaidTasksPerDay": 0.2125
+    },
+    {
+      "priceCad": 40000,
+      "inferredLinks": 153,
+      "baselineExpectedPaidTasksPerDay": 0.127325
+    }
+  ],
+  "note": "Reference figures transcribed from uploaded PDF atlases; not live observations."
+}
