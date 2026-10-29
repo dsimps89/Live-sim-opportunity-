@@ -89,3 +89,22 @@ The 14 prices and 6,053 per-tier inferred links are drawn from the uploaded Chat
 ## Security and production notes
 
 This is a simple single-publisher proof of concept, not a hardened multi-tenant service. Use HTTPS, keep the secret out of source control, monitor quotas, and consider origin restrictions, schema validation improvements, abuse controls and separate publisher identities before scaling. `GET /api/live` is public by design. Worker KV is eventually consistent, so this is **near-live periodic snapshot monitoring**, not guaranteed instantaneous streaming. The publisher is browser-dependent and stops on close/sleep/background throttling.
+
+
+## Live weather map and zoomable opportunity sphere
+
+The globe supports wheel zoom, +/-/Fit controls, pointer rotation, and task-tier labels. It remains an **abstract task-value sphere**; its latitude does not represent physical geography. The separate Leaflet map shows real geographic weather sample locations for Chatham-Kent communities. Weather is retrieved directly in the browser from Open-Meteo (no key for qualifying non-commercial use), refreshed every 15 minutes. The map and Leaflet tiles require internet access.
+
+The weather response scores are **hypothetical scenario indices**, not measured demand, actual sales, confirmed local jobs, or verified household opportunities. A weather scenario strength slider modifies the scores. The published `/api/live` snapshot now includes `data.weather` with weather timestamps, site coordinates, model weather variables, and weather-derived opportunity scores when available. The existing Cloudflare Worker and monitor remain compatible. The website sends snapshots when publishing is active (typically every 120 seconds), so downstream weather updates can lag. Weather API free access is non-commercial subject to Open-Meteo terms and attribution; commercial use requires appropriate licensing.
+
+### App access example
+
+```js
+const response = await fetch('https://YOUR-WORKER.workers.dev/api/live');
+const result = await response.json();
+if (result.live && result.data?.weather) {
+  console.log(result.data.weather.locations);
+}
+```
+
+`result.live` reports the **freshness of the published browser snapshot**, not verification of real-world economic demand.
